@@ -1,0 +1,58 @@
+//============================= Two Column Option under a Row Option ============================================
+// CASE: HERE I careate a custom Widget where I can call the Widget and add three parameter text, Icon Data, Color
+class RowColumnCustomeWidget extends StatelessWidget {
+  // Add variable
+  final String text;
+  final IconData icondata;
+  final Color color;
+  //
+  const RowColumnCustomeWidget({
+    super.key, required this.text, required this.icondata, required this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        //1
+        Container(
+          width: 50,
+          height: 50,
+          child: Icon(
+              icondata,
+            color: color,
+          ),
+          decoration: BoxDecoration(
+            color: color.withOpacity(0.25),
+            shape: BoxShape.circle
+          ),
+        ),
+      const SizedBox(height: 8),
+        //2
+        Text(text),
+      ],
+    );
+  }
+}
+
+//============================= Use Of Upper Widget ============================================
+
+
+   return Scaffold(
+      body: Container(
+        padding: EdgeInsets.only(top: 100),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            //1
+            //const RowColumnCustomeWidget(),
+            RowColumnCustomeWidget(text: 'File Upliad', icondata:Icons.file_upload, color: Colors.amber),
+            //2
+            RowColumnCustomeWidget(text: 'File Download', icondata:Icons.file_download, color: Colors.green),
+          //3
+            //2
+            RowColumnCustomeWidget(text: 'File Download', icondata:Icons.file_download, color: Colors.red)
+          ],
+        ),
+      ),
+    );
