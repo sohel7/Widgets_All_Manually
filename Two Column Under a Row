@@ -1,4 +1,4 @@
-//============================= Two Column Option under a Row Option ============================================
+//============================= Reusable Widget of Two Column Option under a Row Option ============================================
 // CASE: HERE I careate a custom Widget where I can call the Widget and add three parameter text, Icon Data, Color
 class RowColumnCustomeWidget extends StatelessWidget {
   // Add variable
