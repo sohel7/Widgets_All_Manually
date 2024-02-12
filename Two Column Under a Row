@@ -14,7 +14,7 @@ class RowColumnCustomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        //1
+        // 1 Reused the Widget
         Container(
           width: 50,
           height: 50,
@@ -28,7 +28,7 @@ class RowColumnCustomeWidget extends StatelessWidget {
           ),
         ),
       const SizedBox(height: 8),
-        //2
+           // 2 Reused the Widget Text
         Text(text),
       ],
     );
