@@ -1,0 +1,187 @@
+// 1 App.tsx
+// 2 LoginScreen.tsx
+
+
+// 1 App.tsx
+//======================
+
+import React from 'react';
+
+import {
+  View,
+  Text,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native'
+
+import FLatCards from './components/LoginScreen';
+import LoginScreen from './components/LoginScreen';
+
+const App = () => {
+
+  return (
+    <SafeAreaView>
+      <ScrollView>
+        <View>
+
+          <LoginScreen />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  )
+
+}
+
+export default App;
+
+
+//// 2 LoginScreen.tsx
+//==============================================================
+
+import React from 'react';
+import { StyleSheet, Text, View, ImageBackground, Dimensions, TextInput, Alert } from 'react-native';
+import { Button } from 'react-native-paper';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
+export default function LoginScreen() {
+    return (
+        <View style={styles.container}>
+            <ImageBackground source={require('../assets/images/background.jpg')} style={styles.imageBackground}>
+                <View style={styles.HeaderContainer}>
+                    <Text style={styles.HeaderText}>Signup now and  get  </Text>
+                    <Text style={styles.HeaderText}> Bonus up to 10 KocoCoin  </Text>
+                    <Text style={styles.HeaderText}>Welcome Bonus </Text>
+                </View>
+
+                <View style={styles.InputContainer}>
+                    <TextInput
+                        style={styles.InputText}
+                        placeholder="E-mail ID"
+                    />
+
+                    <TextInput style={styles.InputPassword}
+                        placeholder="Password"
+                        // placeholderTextColor="#9a73ef"
+                        returnKeyType='go'
+                        secureTextEntry={true}
+                    />
+                    <View style={styles.PasswordContainer}>
+                        <Text style={styles.ForgetPassword}> Forget Password</Text>
+                    </View>
+                    <View style={styles.ButtonContainer}>
+                        <Button style={styles.BtnStyle} mode="contained" onPress={() => console.log('Pressed')}>
+                            <Text style={styles.BtnText}>Continue</Text>
+                        </Button>
+                    </View>
+                    <View style={styles.PasswordContainer}>
+                        <Text style={styles.ForgetPassword}> Don't Have Account? Register</Text>
+                    </View>
+                </View>
+            </ImageBackground>
+        </View>
+    );
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    imageBackground: {
+        flex: 1,
+        width: windowWidth,
+        height: windowHeight,
+        resizeMode: 'cover',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    HeaderText: {
+        marginTop: 2,
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#ffffff',
+    },
+
+
+    HeaderContainer: {
+        marginTop: 10,
+        flex: 1,
+        height: 400,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    InputContainer: {
+        flex: 1,
+        paddingTop: 30,
+        // alignContent: 'center',
+        // justifyContent: 'center',
+        height: 400,
+        width: '100%',
+        backgroundColor: '#f7f8fa',
+        borderTopRightRadius: 25,
+        borderTopLeftRadius: 25,
+        marginTop: 30,
+
+    },
+
+
+    InputText: {
+
+        marginHorizontal: 20,
+        borderColor: "black",
+        width: 350,
+        borderWidth: 1,
+        borderRadius: 30,
+        padding: 10,
+        backgroundColor: '#25CCF7',
+    },
+
+    InputPassword: {
+        marginTop: 30,
+        marginHorizontal: 20,
+        borderColor: "black",
+        width: 350,
+        borderWidth: 1,
+        borderRadius: 30,
+        padding: 10,
+        backgroundColor: '#25CCF7',
+    },
+
+    PasswordContainer: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        paddingRight: 15,
+        marginTop: 5,
+    },
+
+    ForgetPassword: {
+        fontSize: 16,
+        padding: 7,
+        justifyContent: 'flex-end',
+    },
+
+    ButtonView: {
+        flex: 1,
+        width: 20,
+
+    },
+
+    ButtonContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#0afce8'
+    },
+    BtnStyle: {
+        fontSize: 32,
+        fontWeight: 'bold',
+        backgroundColor: '#0a3ffc',
+        color: '#0a3ffc',
+        // paddingHorizontal: 100,
+    },
+    BtnText: {
+        fontSize: 20,
+    }
+});
