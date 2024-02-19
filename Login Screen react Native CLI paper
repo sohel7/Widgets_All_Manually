@@ -1,5 +1,6 @@
 // 1 App.tsx
 // 2 LoginScreen.tsx
+// 3 Mining Screen named as TestingCss
 
 
 // 1 App.tsx
@@ -185,3 +186,106 @@ const styles = StyleSheet.create({
         fontSize: 20,
     }
 });
+
+// 3 Mining Screen named as TestingCss
+--====================================
+import React from 'react';
+import { StyleSheet, Text, View, Dimensions, TouchableOpacity, Image } from 'react-native';
+
+import LinearGradient from 'react-native-linear-gradient';
+import Ionicons from 'react-native-ionicons';
+
+export default function TestingCss() {
+    return (
+        <LinearGradient colors={['#E9F8FF', '#C1ECFE', '#5B8EF8',]} style={styles.background}>
+            <View style={styles.header}>
+                <TouchableOpacity>
+                    <Ionicons name="arrow-back" size={24} color="#000000" />
+                </TouchableOpacity>
+                <Text style={styles.headerText}>Mining</Text>
+                <TouchableOpacity>
+                    <Ionicons name="md-help-circle-outline" size={24} color="#000000" />
+                </TouchableOpacity>
+            </View>
+            <View style={styles.container}>
+                <Text style={styles.KocoText}>Total Koco: 100</Text>
+                <View style={styles.blueCircle}>
+                    <View style={styles.blackCircle}>
+                        <Text> 100.25222</Text>
+                        <Text> +5.4/day</Text>
+                        <Text> 24:30:32</Text>
+                    </View>
+                </View>
+            </View>
+        </LinearGradient>
+    );
+}
+
+const styles = StyleSheet.create({
+    background: {
+        flex: 1,
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height,
+    },
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        resizeMode: 'cover',
+        marginBottom: 100,
+    },
+
+    header: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 20,
+    },
+    headerText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
+
+    img: {
+        width: 30,
+        height: 30,
+        backgroundColor: '#E5F6FE'
+    },
+    circleContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+
+
+    },
+    blueCircle: {
+
+        width: 250,
+        height: 250,
+        borderRadius: 130,
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderColor: '#3498DB',
+        borderWidth: 12,
+    },
+    blackCircle: {
+        width: 235,
+        height: 235,
+        borderRadius: 120,
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderColor: 'black',
+        borderWidth: 10,
+    },
+
+    KocoText: {
+        padding: 30,
+        fontSize: 20,
+        fontWeight: 'bold',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
+});
+
